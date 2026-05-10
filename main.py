@@ -59,7 +59,7 @@ def processCommand(c):
         speak("Opening youtube,sir")
         webbrowser.open("https://www.youtube.com/")
 
-    elif "open files" in c.lower():
+    elif "open files" or "open file explorer" in c.lower():
         speak("Opening file explorer,sir")
         os.system("explorer")
 
