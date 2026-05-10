@@ -5,9 +5,12 @@ import musicLibrary
 import requests
 import os
 from google import genai
+from dotenv import load_dotenv
 
+load_dotenv()
 recognizer = sr.Recognizer()
-newsapi = "a0d739234ab649abacfe934b464256cc"
+
+newsapi = os.getenv("News_Api_Key")
 
 # ---------------- TTS ---------------
 
@@ -20,7 +23,9 @@ def speak(text):
 
 
 # --------------- Gemini Setup ---------------
-client = genai.Client(api_key="AIzaSyBgJfAS3JhGZoK5C6Wv02uRT2K4QWD5B7A")
+
+api_key = os.getenv("Gemini_Api_Key")
+client = genai.Client(api_key=api_key)
 
 def AiProcess(command):
 
